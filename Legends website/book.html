@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Book</title>
+    <style>
+	/* Reset default margin and padding for all elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Style the header for the navigation bar */
+        header {
+            background-color: white;
+			font-size: 16px;
+			font-weight: bold;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Style the logo */
+        .logo {
+            width: 100px; /* Adjust the logo size as needed */
+			height: 100px;
+            margin-right: 10px;
+        }
+
+        /* Style the navigation menu */
+        nav {
+            flex-grow: 1;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+				text-align: center;
+        }
+
+        li {
+            display: inline;
+            margin-right: 20px;
+			
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-family: 'Open Sans', sans-serif; /* Use the Google Fonts font */
+        }
+		
+		
+		//IMAGE SLIDE SHOW 
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 350px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+h2{
+  max-width: 350px;
+  position: relative;
+  margin: auto;
+}
+
+.paragraph
+{
+  color-text: grey;
+  max-width: 350px;
+  position: relative;
+  margin: auto;
+}
+
+//blocks
+.website{
+  max-width: 350px;
+  position: relative;
+  margin: auto;
+
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block {
+  border-radius: 10px;
+  width: 250px;
+  height: 250px;
+  background-color: smokewhite;
+  border: 1px solid black;
+  margin: 0 10px;
+  float: left;
+  text-align: center; /* Center text within the box */
+  line-height: 20px; /* Vertically center text *
+  margin: 5px;
+
+}
+
+.clear {
+  clear: both; /* Add a clearing element to clear the floats */
+}
+
+
+.column{
+width: 10%;
+float: left;
+padding: 15px;
+}
+.row {
+    margin-left: 50px%;
+    clear: both;
+    display: table;
+}
+.move{
+margin-left: 50px;
+}
+
+.clear {
+  clear: both; /* Add a clearing element to clear the floats */
+}
+
+/* Style the Shop Online button */
+.shop-button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 10px; /* Adjust the margin as needed */
+}
+
+
+
+
+}
+.container1{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: black;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:50;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
+img.centered-image {
+padding: 20px;
+max-width: 100%; /* Ensure the image doesn't exceed its container *
+max-height: 100%; /* Ensure the image doesn't exceed its container *
+display: block;
+margin: 0 auto; /* Center horizontally */
+padding-left: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            margin: 0;
+)  font-family: 'Open Sans', sans-serif; /* Use the Google Fonts font */
+        }
+	
+	
+	
+	
+	
+	
+	
+        .form {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 300px;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: black;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<header>
+        <!-- Navigation menu on the right side -->
+        <nav>
+            <ul>
+			    <img src="logo.png" alt="Company Logo" class="logo"> 
+				<li><a href="index.html">#Home</a></li>
+                <li><a href="Bookvip.html">Book VIP</a></li>
+				<li><a href="book.html">Book</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="legendsgiveback.html">#LegendsGiveBack</a></li>
+                <li><a href="careers.html">Careers</a></li>
+				<li><a href="ownfranchise.html">Own A franchise</a></li>
+				<li><a href="login.html">Login</a></li>
+			    <li><a href="login.html">SignOut</a></li>
+				<li><a href="cart.html" class="shop-button">Shop Online</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<body>
+<div class="form">
+    <form id="form">
+        <img src="logo.png" style="margin-left: 30%" alt="Company Logo" width="110" height="110"><br><br>
+        <label for="location">Choose a Store location</label>
+        <select id="location" name="location">
+            <option value="East Rand Mall">East Rand Mall</option>
+            <option value="Green Stone">Green Stone</option>
+            <option value="Rosebank">Rosebank</option>
+        </select>
+        <br>
+        <label for="BarberID">Choose Your Favorite Barber:</label>
+        <select id="BarberID" name="BarberID">
+            <!-- Options will be populated dynamically from Firebase -->
+        </select>
+        <br>
+        <label for="HairStyle">Hair Style:</label>
+        <select id="HairStyle" name="HairStyle">
+            <option value="Fade & Line Design R170">Fade & Line Design R170</option>
+            <option value="Fade, Dye & Line Design R250">Fade, Dye & Line Design R250</option>
+            <option value="Fade % Custom Design R190">Fade % Custom Design R190</option>
+            <option value="High Top Fade R150">High Top Fade R150</option>
+            <option value="Fade, Powder & Custom Design R190">Fade, Powder & Custom Design R190</option>
+            <option value="Fade & Shave R230">Fade & Shave R230</option>
+        </select>
+        <br>
+        <label for="date">Select a Date:</label>
+        <input type="date" id="date" name="date">
+        <br><br>
+        <label for="Time">Time Slot:</label>
+        <select id="Time" name="Time">
+            <option value="10:30">10:30</option>
+            <option value="12:30">12:30</option>
+            <option value="14:30">14:30</option>
+            <option value="16:30">16:30</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Book">
+    </form>
+	</div>
+	
+</body>
+</html>
+
+<script type="module">
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-auth.js";
+    import { getDatabase, ref, get, push } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-database.js";
+
+	
+    // Your Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyCwftMj_n2jY8bImf1hM09lzOTMQ0u6JyI",
+        authDomain: "legends-a1391.firebaseapp.com",
+        databaseURL: "https://legends-a1391-default-rtdb.firebaseio.com",
+        projectId: "legends-a1391",
+        storageBucket: "legends-a1391.appspot.com",
+        messagingSenderId: "917760743515",
+        appId: "1:917760743515:web:1f7ce3524ca9ee42e9c77e",
+        measurementId: "G-8X8QSVN4E5"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+	const auth = getAuth(app);
+    const database = getDatabase(app); // Define the 'database' variable
+
+    const barbersRef = ref(database, 'dbLegends/Locations');
+
+    // Fetch the data using get
+    get(barbersRef).then((snapshot) => {
+        if (snapshot.exists()) {
+            const locations = snapshot.val();
+            populateLocationDropdown(locations);
+        }
+    }).catch((error) => {
+        console.error("Error getting data: ", error);
+    });
+
+    // Function to populate the "location" dropdown
+    function populateLocationDropdown(locations) {
+        const dropdown = document.getElementById('location');
+        dropdown.innerHTML = '';
+        for (const key in locations) {
+            if (locations.hasOwnProperty(key)) {
+                const option = document.createElement('option');
+                option.value = key;
+                option.text = key;
+                dropdown.appendChild(option);
+            }
+        }
+        // Trigger the change event to initially populate the Barber dropdown
+        dropdown.dispatchEvent(new Event('change'));
+    }
+
+    // Function to populate the "BarberID" dropdown based on the selected location
+    function populateBarberDropdown(locationName) {
+        const dropdown = document.getElementById('BarberID');
+        dropdown.innerHTML = '';
+        const locationRef = ref(database, `dbLegends/Locations/${locationName}/Barbers`);
+        get(locationRef).then((snapshot) => {
+            if (snapshot.exists()) {
+                const barbers = snapshot.val();
+                for (const key in barbers) {
+                    if (barbers.hasOwnProperty(key)) {
+                        const option = document.createElement('option');
+                        option.value = key;
+                        option.text = barbers[key].LastName;
+                        dropdown.appendChild(option);
+                    }
+                }
+            }
+        }).catch((error) => {
+            console.error("Error getting data: ", error);
+        });
+    }
+
+    // Event listener for the "location" dropdown change
+    const locationDropdown = document.getElementById('location');
+    locationDropdown.addEventListener('change', (e) => {
+        const selectedLocation = e.target.value;
+        if (selectedLocation) {
+            populateBarberDropdown(selectedLocation);
+        } else {
+            // Clear the "BarberID" dropdown if no location is selected
+            const barberDropdown = document.getElementById('BarberID');
+            barberDropdown.innerHTML = '';
+        }
+    });
+	
+	
+	// Event listener for the form submission
+        document.getElementById("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get form data
+            var formData = {
+                location: document.getElementById("location").value,
+                barberID: document.getElementById("BarberID").value,
+                hairstyle: document.getElementById("HairStyle").value,
+                date: document.getElementById("date").value,
+                time: document.getElementById("Time").value
+            };
+			
+
+
+            // Save the form data to Firebase
+            push(ref(database, 'Appoinments'), formData)
+                .then(function() {
+                    alert('Booking successful!');
+                    // You can add additional logic after a successful booking
+                })
+                .catch(function(error) {
+                    console.error('Error saving to Firebase:', error);
+                });
+        });
+
+</script>
+
+
+
+
+
+
+

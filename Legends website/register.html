@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign-Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .signup-container {
+            width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .signup-container h2 {
+            text-align: center;
+        }
+        .signup-container input[type="text"],
+		.signup-container input[type="number"],
+		.signup-container input[type="date"],
+        .signup-container input[type="password"],
+        .signup-container input[type="email"] {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .signup-container input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin: 20px 0;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .signup-container a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .signup-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+		<img src="logo.png" style="margin-left: 35%" alt="Company Logo" width="110" height="140">
+        <form id="LegendsForm"> <!-- Changed the form ID to "LegendsForm" -->
+            <input type="text" id="LastName" name="	LastName" placeholder="Lastname" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="number" id="phone" name="phone" placeholder="Phone" required>
+            <input type="date" id="birthday" name="birthday" placeholder="Birthday" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="password" name="conpassword" placeholder="Confirm Password" required>
+            <input type="submit" value="Sign Up">
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+	
+
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-auth.js";
+  import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-database.js";
+
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCwftMj_n2jY8bImf1hM09lzOTMQ0u6JyI",
+    authDomain: "legends-a1391.firebaseapp.com",
+    databaseURL: "https://legends-a1391-default-rtdb.firebaseio.com",
+    projectId: "legends-a1391",
+    storageBucket: "legends-a1391.appspot.com",
+    messagingSenderId: "917760743515",
+    appId: "1:917760743515:web:1f7ce3524ca9ee42e9c77e",
+    measurementId: "G-8X8QSVN4E5"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const database = getDatabase(app);
+
+   
+          const signupForm = document.getElementById('LegendsForm'); // Updated form ID
+          signupForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const LastName = document.getElementById('LastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const birthday = document.getElementById('birthday').value;
+            const password = document.getElementById('password').value;
+            const conpassword = document.getElementsByName('conpassword')[0].value;
+
+            // Validate passwords match
+            if (password !== conpassword) {
+                alert("Passwords do not match.");
+                return;
+            }
+
+            try {
+                // Create a new user using Firebase Authentication
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+
+                // Store additional user information in the Realtime Database.
+                await set(ref(database,`dbLegends/Customers/${LastName}`), {
+                    LastName: LastName,
+                    email: email,
+                    phone: phone,
+                    birthday: birthday,
+					password: password,
+                });
+
+                // Redirect to another page or show a success message.
+                alert("User signed up successfully!");
+            } catch (error) {
+                // Handle signup errors.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorMessage);
+            }
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign In</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h2 {
+            text-align: center;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"],
+        .login-container input[type="email"] {
+            width: 95%;
+            padding: 10px; /* Adjusted padding to add spacing */
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin: 20px 0;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .login-container a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="logo.png" style="margin-left: 35%" alt="Company Logo" width="110" height="110">
+        <form id="loginForm" method="post">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+        <p>Don't have an account? <a href="register.html">Register here</a></p>
+        <p><a href="forgot_password.html">Forgot your password?</a></p>
+    </div>
+
+	
+	<script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-auth.js";
+        
+        // Your Firebase configuration
+    const firebaseConfig = {
+    apiKey: "AIzaSyCwftMj_n2jY8bImf1hM09lzOTMQ0u6JyI",
+    authDomain: "legends-a1391.firebaseapp.com",
+    databaseURL: "https://legends-a1391-default-rtdb.firebaseio.com",
+    projectId: "legends-a1391",
+    storageBucket: "legends-a1391.appspot.com",
+    messagingSenderId: "917760743515",
+    appId: "1:917760743515:web:1f7ce3524ca9ee42e9c77e",
+    measurementId: "G-8X8QSVN4E5"
+  };
+        
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        
+        const loginForm = document.getElementById('loginForm');
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = loginForm.elements.email.value;
+            const password = loginForm.elements.password.value;
+            
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                // User is signed in, you can redirect or perform other actions.
+				window.location.href = "index.html"; // Replace with the URL of your home page.
+            } catch (error) {
+                // Handle login errors.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorMessage);
+            }
+        });
+    </script>
+	
+</body>
+</html>
